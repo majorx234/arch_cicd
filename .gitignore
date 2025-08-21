@@ -1,0 +1,33 @@
+# general ignores
+*.egg-info
+**/.idea
+.DS_Store
+.idea
+**/__pycache__
+__pycache__
+*/__pycache__
+__pycache__/
+.#*.*
+\#*#
+*.log
+*/db.sqlite3
+
+*.iml
+*.py[cod]
+*.*.py[cod]
+
+# distribution
+build/
+dist/
+
+# venv and vscode
+env/
+venv*/
+.vscode/
+
+# emacs
+.emacs.desktop
+*.*~
+
+# django stuff
+*.sqlite3
