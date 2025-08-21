@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>cd manager</title>
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'bootstrap_datetimepicker/css/bootstrap-datetimepicker.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'bootstrap_datepicker_plus/css/datepicker-widget.css' %}" type="text/css">
+  </head>
+  <body>
+    <div class="container-fluid border-bottom shadow-sm p-3 px-md-4 mb-3 fixed-top bg-white">
+      <div class="row">
+        <div class="d-lg-none col-3 ml-1 pt-2 justify-content-left bg-white my-auto">
+          <h3>Arch CICD</h3>
+        </div>
+        <div class="d-none d-lg-block pt-2 col-4 bg-white my-auto">
+          <h2>CD Management</h2>
+        </div>
+        <div class="col bg-white pl-0 my-auto">
+          <ul class="nav nav-pills nav-fill">
+            <li class="nav-item">
+              <a class="nav-link {% block current_active %} {% endblock %}" href="{% url 'main' %}">
+                current
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% block create_active %} {% endblock %}" href="{% url 'create' %}">
+                create
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% block list_active %} {% endblock %}" href="{% url 'list' %}">
+                search
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    {% block content %}
+    {% endblock %}
+
+    <script type="text/javascript" src="{% static 'bootstrap/jquery-3.7.1.slim.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bootstrap/popper-1.16.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bootstrap/moment-with-locales.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bootstrap/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bootstrap_datetimepicker/js/bootstrap-datetimepicker.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bootstrap_datepicker_plus/js/datepicker-widget.js' %}"></script>
+  </body>
+</html>

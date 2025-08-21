@@ -1,0 +1,10 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+
+{% block content %}
+
+<form method="POST" enctype="multipart/form-data">
+    {{ form.as_p }}
+    <input type="submit" value="{{ METHOD }}">
+</form>
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends 'base_generic.html' %}
+{% load django_tables2 %}
+
+{% block content %}
+  <h1>Arch CICD</h1>
+  <p>current packages</p>
+  <div class="row mx-0 mt-2">
+    <div class="col mx-0">
+      {% render_table table %}
+    </div>
+  </div>
+{% endblock %}

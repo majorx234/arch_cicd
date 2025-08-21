@@ -1,0 +1,44 @@
+{% extends 'base_generic.html' %}
+{% block content %}
+    <h1>detail</h1>
+    <p>Package here we need a form</p>
+    <div>
+      <div>
+        {{ object.id }}
+      </div>
+    </div>
+    <div>
+      <div>
+        {{ object.name }}
+      </div>
+    </div>
+    <div>
+      <div>
+        {{ object.repo_url }}
+      </div>
+    </div>
+    <div>
+      <div>
+        {{ object.makepkg_extra_args }}
+      </div>
+      <div>
+        {{ object.clean_build }}
+      </div>
+      <div>
+        {{ object.build_status }}
+      </div>
+      <div>
+        {{ object.build_date }}
+      </div>
+      <div>
+        {{ object.build_output }}
+      </div>
+      <div>
+        {{ object.repo_push }}
+      </div>
+      <div>
+        {{ object.repo_release_push }}
+      </div>
+    </div>
+{% endblock %}
+
