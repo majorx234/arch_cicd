@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "arch_cicd"
+version = "0.1.0"
+authors = [{ name = "MajorX234", email = "majorx234@googlemail.com" }]
+description = "Brandenburg Labs cicd -  high level package build"
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = ["Archlinux", "CICD"]
+license = { text = "AGPL-3.0 license" }
+dependencies = [
+  "django",
+  "django-tables2",
+  "django-filter",
+  "django-rest-framework",
+  "gunicorn"
+]
+
+[project.optional-dependencies]
+dev = [
+  "build"
+  "django-stubs",
+  "pip-tools",
+  "ruff",
+]
+
+[tool.autopep8]
+max_line_length = 140
