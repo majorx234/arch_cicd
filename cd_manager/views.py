@@ -30,6 +30,11 @@ class PackageCreateView(CreateView):
         return context
 
 
+class PackageCreateRestView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Package.objects.all()
+    serializer_class = PackageSerializer
+
+
 class PackageDetailView(DetailView):
     # permission_required = 'cd_manager.view_packages'
     model = Package
