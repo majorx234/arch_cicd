@@ -14,6 +14,10 @@ class PackageTable(Table):
         html = format_html('<a href="{}">{}</a>', url, value)
         return html
 
+    def render_build_status(self, record, value):
+        html = format_html('<div class="col"><p>{}</p><button type="button" class="btn btn-secondary" data-toggle="modal">build</button></div>', record.build_status)
+        return html
+
     class Meta:
         model = Package
         per_page = 20
