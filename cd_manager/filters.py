@@ -36,5 +36,5 @@ class PackageFilter(FilterSet):
         fields = {
             'name': ['icontains', ],
             'build_status': ['exact', ],
-            'repo_url': ['exact', ],
+            'repo_url': ['icontains', ],
         }
