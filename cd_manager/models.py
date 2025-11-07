@@ -16,6 +16,7 @@ class Package(models.Model):
     build_output = models.TextField(null=True, blank=True)
     repo_push = models.BooleanField(default=False)
     repo_release_push = models.BooleanField(default=False)
+    last_version = models.CharField(max_length=255, blank=True)
 
     def __str__(self):
         return self.name

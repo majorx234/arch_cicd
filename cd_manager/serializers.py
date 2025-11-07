@@ -14,4 +14,5 @@ class PackageSerializer(serializers.ModelSerializer):
                   'build_date',
                   'build_output',
                   'repo_push',
-                  'repo_release_push')
+                  'repo_release_push',
+                  'last_version')

@@ -15,7 +15,11 @@ class PackageTable(Table):
         return html
 
     def render_build_status(self, record, value):
-        html = format_html('<div class="col"><p>{}</p><button type="button" class="btn btn-secondary" data-toggle="modal">build</button></div>', record.build_status)
+        html = format_html('<div class="col"><p>{}</p><button type="button" class="btn btn-secondary" data-toggle="modal">build now</button></div>', record.build_status)
+        return html
+
+    def render_last_version(self, record, value):
+        html = format_html('<div class="col"><p>{}</p><button type="button" class="btn btn-secondary" data-toggle="modal">check</button></div>', record.last_version)
         return html
 
     class Meta:
