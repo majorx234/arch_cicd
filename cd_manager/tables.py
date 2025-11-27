@@ -19,7 +19,8 @@ class PackageTable(Table):
         return html
 
     def render_last_version(self, record, value):
-        html = format_html('<div class="col"><p>{}</p><button type="button" class="btn btn-secondary" data-toggle="modal">check</button></div>', record.last_version)
+        # TODO, add build trigger functionality
+        html = format_html('<div class="col"><p>{}</p><button type="button" class="btn btn-secondary" data-toggle="modal">build</button></div>', record.build_status)
         return html
 
     class Meta:
