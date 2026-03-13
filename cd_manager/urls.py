@@ -3,7 +3,8 @@ from django.urls import path
 
 from .views import MainView, PackageCreateView, \
                    PackageListView, PackageDetailView, \
-                   PackageRestDetailView, PackageRestListView \
+                   PackageRestDetailView, PackageRestListView, \
+                   BuildnowAPIView \
 
 
 urlpatterns = [
@@ -13,4 +14,5 @@ urlpatterns = [
     path('rest-detail/<pk>/', PackageRestDetailView.as_view(), name='rest-detail'),
     path('list/', PackageListView.as_view(), name='list'),
     path('rest-list/', PackageRestListView.as_view(), name='rest-list'),
+    path('buildnow/<pk>', BuildnowAPIView.as_view(), name='buildnow'),
 ]

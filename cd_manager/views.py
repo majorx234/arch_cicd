@@ -3,6 +3,9 @@ from django.views.generic import CreateView, DetailView, \
 from django_tables2.views import SingleTableMixin
 from django_filters.views import FilterView
 from rest_framework import generics
+from rest_framework.generics import GenericAPIView
+from rest_framework.response import Response
+import json
 
 from cd_manager.models import Package
 from cd_manager.forms import PackageForm
@@ -64,3 +67,22 @@ class MainView(SingleTableMixin, FilterView):
     template_name = 'cicd_overview.html'
     model = Package
     table_class = PackageTable
+
+
+class BuildnowAPIView(GenericAPIView):
+    queryset = Package.objects.all()
+    serializer_class = PackageSerializer
+
+    def get(self, request, *args, **kwargs):
+        queryset = self.get_queryset()  # Get queryset
+        json_data=json.dumps(request.data)
+        print(f"Buildnow get: {json_data}")
+        serializer = self.get_serializer(queryset, many=True)  # Serialize queryset
+        return Response(serializer.data)
+
+    def post(self, request, *args, **kwargs):
+        queryset = self.get_queryset()  # Get queryset
+        json_data = json.dumps(request.data)
+        print(f"Buildnow post: {json_data}")
+        serializer = self.get_serializer(queryset, many=True)  # Serialize queryset
+        return Response(serializer.data)
