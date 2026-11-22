@@ -10,18 +10,20 @@ description = "Brandenburg Labs cicd -  high level package build"
 readme = "README.md"
 requires-python = ">=3.10"
 keywords = ["Archlinux", "CICD"]
-license = { text = "AGPL-3.0 license" }
+license-files = ["LICENSE"]
+
 dependencies = [
   "django",
   "django-tables2",
   "django-filter",
   "django-rest-framework",
-  "gunicorn"
+  "gunicorn",
+  "django-bootstrap-datepicker-plus",
 ]
 
 [project.optional-dependencies]
 dev = [
-  "build"
+  "build",
   "django-stubs",
   "pip-tools",
   "ruff",
@@ -29,3 +31,6 @@ dev = [
 
 [tool.autopep8]
 max_line_length = 140
+
+[tool.setuptools.packages.find]
+where = ["src"]
